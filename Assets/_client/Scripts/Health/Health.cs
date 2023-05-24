@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
     {
         currentHealth = startingHealth;
         isDead = false;
+        DeadZone.EnterDeadZone += Die;
         MenuController.OnRestart += Recreatin;
         Enemy.EnemyAtack += TakeDamage;
     }
@@ -26,20 +27,19 @@ public class Health : MonoBehaviour
     {
         MenuController.OnRestart -= Recreatin;
         Enemy.EnemyAtack -= TakeDamage;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            TakeDamage(1);
-        }
+        DeadZone.EnterDeadZone -= Die;
     }
 
     public void TakeDamage()
     {
         TakeDamage(1);
     }
+
+    public void Die()
+    {
+        TakeDamage(startingHealth);
+    }
+
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
