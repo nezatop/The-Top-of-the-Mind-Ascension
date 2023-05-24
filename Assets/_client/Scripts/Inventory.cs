@@ -54,20 +54,12 @@ public class Inventory : MonoBehaviour
     {
         HeailngItemsCounter.text = _healingItemsCount.ToString();
         DamageItemsCounter.text = _damageItemsCount.ToString();
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            AddHealingItems(5);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            AddDamageItems(5);
-        }
-        if(Input.GetKeyDown(KeyCode.E))
+        
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             UseHealingItems();
         }
-        if (Input.GetKeyDown(KeyCode.Q) && _canUseDI)
+        if (Input.GetKeyDown(KeyCode.E) && _canUseDI)
         {
             UseDamageItems();
         }
