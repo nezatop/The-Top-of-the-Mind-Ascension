@@ -176,7 +176,7 @@ public class MenuController : MonoBehaviour
         if (button == "Play")
         {
             Menu = MenuName.Play;
-            Debug.Log("Загрузка Игровой сцены");
+            Debug.Log("Р—Р°РіСЂСѓР·РєР° РРіСЂРѕРІРѕР№ СЃС†РµРЅС‹");
             //Play();
             //SceneManager.LoadScene("Demo");
         }
@@ -193,7 +193,7 @@ public class MenuController : MonoBehaviour
         }
         if (button == "Restart")
         {
-            Debug.Log("Загрузка Последнего сохранения");
+            Debug.Log("Р—Р°РіСЂСѓР·РєР° РџРѕСЃР»РµРґРЅРµРіРѕ СЃРѕС…СЂР°РЅРµРЅРёСЏ");
             Play();
             SceneManager.LoadScene("Demo");
         }

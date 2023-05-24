@@ -1932,7 +1932,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7618400963422816946, guid: 4a97bea1e3bc20f4fa56b0a9e296603d, type: 3}
       propertyPath: distance
-      value: 5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8200431101839168858, guid: 4a97bea1e3bc20f4fa56b0a9e296603d, type: 3}
       propertyPath: m_RootOrder
@@ -1940,7 +1940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200431101839168858, guid: 4a97bea1e3bc20f4fa56b0a9e296603d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.51
+      value: -9.45
       objectReference: {fileID: 0}
     - target: {fileID: 8200431101839168858, guid: 4a97bea1e3bc20f4fa56b0a9e296603d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1981,6 +1981,10 @@ PrefabInstance:
     - target: {fileID: 8200431101839170214, guid: 4a97bea1e3bc20f4fa56b0a9e296603d, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200431101839170215, guid: 4a97bea1e3bc20f4fa56b0a9e296603d, type: 3}
+      propertyPath: StartingHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a97bea1e3bc20f4fa56b0a9e296603d, type: 3}

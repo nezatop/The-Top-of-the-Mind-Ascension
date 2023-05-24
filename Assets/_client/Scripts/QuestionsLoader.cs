@@ -19,7 +19,7 @@ public class QuestionsLoader
         int index = UnityEngine.Random.Range(1, Count);
         Question question= new Question();
         question.Text = Resources.Load<TextAsset>(path + "Q (" + index + ")").text;
-        string[] lines = Resources.Load<TextAsset>(path + "A (" + index + ")").text.Split('\n');
+        string[] lines = Resources.Load<TextAsset>(path + "A (" + index + ")").text.Split('\r');
 
         // Преобразование первой строки в int
         question.RightAnswer = int.Parse(lines[0]);
