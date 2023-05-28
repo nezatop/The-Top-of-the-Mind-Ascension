@@ -18,7 +18,13 @@ public class FightMenu : MonoBehaviour
 
     private void OnEnable()
     {
+        Inventory.UseDamageItem += LoadQuestion;
         LoadQuestion();
+    }
+
+    private void OnDestroy()
+    {
+        Inventory.UseDamageItem -= LoadQuestion;
     }
 
     private void LoadQuestion()

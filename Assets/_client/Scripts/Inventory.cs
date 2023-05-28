@@ -1,21 +1,24 @@
 using UnityEngine;
 using System;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Inventory : MonoBehaviour
 {
     #region Render
-    [Header("Render")]
-    [SerializeField] private TextMeshProUGUI HeailngItemsCounter;
+
+    [Header("Render")] [SerializeField] private TextMeshProUGUI HeailngItemsCounter;
     [SerializeField] private TextMeshProUGUI DamageItemsCounter;
+
     #endregion
 
     private GameObject Player;
 
     #region MaxValues
-    [Header("MaxValues")]
-    [SerializeField] private int MaxHealingItemsCount;
+
+    [Header("MaxValues")] [SerializeField] private int MaxHealingItemsCount;
     [SerializeField] private int MaxDamageItemsCount;
+
     #endregion
 
     private int _healingItemsCount = 0;
@@ -33,6 +36,7 @@ public class Inventory : MonoBehaviour
         MenuController.OnFight += CanUseDI;
         MenuController.OnPlayed += CantUseDI;
     }
+    
 
     private void OnDisable()
     {
@@ -43,38 +47,51 @@ public class Inventory : MonoBehaviour
 
     void CanUseDI()
     {
-        _canUseDI= true;
+        _canUseDI = true;
     }
+
     void CantUseDI()
     {
-        _canUseDI= false;
+        _canUseDI = false;
     }
 
     private void Update()
     {
         HeailngItemsCounter.text = _healingItemsCount.ToString();
         DamageItemsCounter.text = _damageItemsCount.ToString();
-        
-        if(Input.GetKeyDown(KeyCode.Q))
+
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             UseHealingItems();
         }
+
         if (Input.GetKeyDown(KeyCode.E) && _canUseDI)
         {
             UseDamageItems();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            AddHealingItems(5);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F12))
+        {
+            AddDamageItems(5);
         }
     }
 
     public void GainBonus()
     {
-        AddHealingItems(UnityEngine.Random.Range(0,3));
-        AddDamageItems(UnityEngine.Random.Range(0, 3));
+        AddHealingItems(UnityEngine.Random.Range(0, 1));
+        AddDamageItems(UnityEngine.Random.Range(0, 1));
     }
 
     public void AddHealingItems(int healingItemsCount)
     {
         _healingItemsCount = Mathf.Clamp(_healingItemsCount + healingItemsCount, 0, MaxHealingItemsCount);
     }
+
     public void AddDamageItems(int damageItemsCount)
     {
         _damageItemsCount = Mathf.Clamp(_damageItemsCount + damageItemsCount, 0, MaxDamageItemsCount);
@@ -88,6 +105,7 @@ public class Inventory : MonoBehaviour
             Player.GetComponent<Health>().AddHealth(1);
         }
     }
+
     public void UseDamageItems()
     {
         if (_damageItemsCount > 0)
