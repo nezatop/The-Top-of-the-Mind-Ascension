@@ -47,16 +47,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuClipList:
   - {fileID: 8300000, guid: 7a7b542b6201aa14e8540a023f23714d, type: 3}
-  - {fileID: 8300000, guid: 262a5125a4d0cd14cb7315ea758b0aac, type: 3}
+  - {fileID: 8300000, guid: 161544f0b2c6bfd4981a43ffc31cb93f, type: 3}
+  - {fileID: 8300000, guid: fb2583d163818c6439352edc7cf1b06f, type: 3}
+  - {fileID: 8300000, guid: da1b7fb07bbb42c4ea9c61ea9e979064, type: 3}
+  - {fileID: 8300000, guid: 90ac00cfed174b34fb8dd5193c993fab, type: 3}
+  - {fileID: 8300000, guid: a8a59aa0b5b7cba4eba803ea3ee6408a, type: 3}
   FightClipList:
-  - {fileID: 8300000, guid: 1d4b7eb9b044c4b42adbb2b958124576, type: 3}
-  - {fileID: 8300000, guid: 75bbda434f57b4445bd213a4b9d54761, type: 3}
+  - {fileID: 8300000, guid: 556b7b7a07645844abcd40674d927f82, type: 3}
+  - {fileID: 8300000, guid: 11a77744930497b4a9dac08c3fc3f8c8, type: 3}
+  - {fileID: 8300000, guid: b4f72f2e34b7e774eb8298606005d361, type: 3}
   - {fileID: 8300000, guid: 4cf5c037eb63dc1418848b72bafc0b23, type: 3}
+  - {fileID: 8300000, guid: 75bbda434f57b4445bd213a4b9d54761, type: 3}
   - {fileID: 8300000, guid: 5b3632d149b06da41b2cac26696f982a, type: 3}
+  - {fileID: 8300000, guid: 1d4b7eb9b044c4b42adbb2b958124576, type: 3}
+  - {fileID: 8300000, guid: 1e61e44872df7424e8fc67aa08be4ce7, type: 3}
+  - {fileID: 8300000, guid: 889041e1cfc246e47a9311d96e568028, type: 3}
+  - {fileID: 8300000, guid: d679f6e50bde62c4c898381e39641419, type: 3}
+  - {fileID: 8300000, guid: 53096f338e43daa41a8a2c20418eae31, type: 3}
+  - {fileID: 8300000, guid: cba6cf512aec0b64d887aeb6f95515fa, type: 3}
   LocationClipList:
+  - {fileID: 8300000, guid: 262a5125a4d0cd14cb7315ea758b0aac, type: 3}
   - {fileID: 8300000, guid: 7c942c7b813437245ba48ccd0bdcac5a, type: 3}
+  - {fileID: 8300000, guid: 39a13995af3bead46b66f850e50df00f, type: 3}
+  - {fileID: 8300000, guid: 4d6fefd4ecbd4844ca9d542ea14429cc, type: 3}
+  - {fileID: 8300000, guid: 96778a3b4963a8c42ae3637b29c9fd6e, type: 3}
+  - {fileID: 8300000, guid: 297d9e5be8fc0214281e02e81df99bc8, type: 3}
+  - {fileID: 8300000, guid: e5e2e63e5667b51478221d995aa8b177, type: 3}
   DialogClipList:
-  - {fileID: 8300000, guid: 0d39d1545e73e784ea77a6efbe7555c4, type: 3}
+  - {fileID: 8300000, guid: 8e9dfe30b87ce664ca444ade65ce7fee, type: 3}
+  - {fileID: 8300000, guid: e30d718ff44123c40a6c955f50ac574d, type: 3}
+  - {fileID: 8300000, guid: d7be177e73a570d43b20b10f86217eda, type: 3}
+  - {fileID: 8300000, guid: 4dcaed83b8a5ac04bb3c40afa2011ad9, type: 3}
+  - {fileID: 8300000, guid: 6da646a91b2628443b2a70685c4fc208, type: 3}
+  - {fileID: 8300000, guid: bbb18b2ceaa04a2438c30c215a2c9a6d, type: 3}
+  - {fileID: 8300000, guid: 0fa675e887ed8c046806b054a2362731, type: 3}
+  - {fileID: 8300000, guid: 45f681cf0ad661c4289726d135c7c199, type: 3}
+  - {fileID: 8300000, guid: e4714fd6c90bd784a9c2f18f176e5167, type: 3}
   Menu: 0
 --- !u!82 &1096802580971060644
 AudioSource:

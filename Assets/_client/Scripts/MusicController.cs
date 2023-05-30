@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -48,10 +49,25 @@ public class MusicController : MonoBehaviour
         MenuController.OnFight += FightMusic;
         MenuController.OnDialog += DialogMusic;
 
-        musicPlayer.ignoreListenerPause= true;
+        musicPlayer.ignoreListenerPause = true;
 
         musicPlayer.clip = MenuClipList[musicIndex = (musicIndex + 1) % MenuClipList.Count];
         musicPlayer.Play();
+    }
+
+    private void Update()
+    {
+        if (!musicPlayer.isPlaying)
+        {
+            if (Menu == MenuName.Menu)
+                MenuSound();
+            if (Menu == MenuName.Play)
+                PlayMusic();
+            if (Menu == MenuName.Dialog)
+                DialogMusic();
+            if (Menu == MenuName.Fight)
+                FightMusic();
+        }
     }
 
     private void OnDisable()
@@ -66,22 +82,31 @@ public class MusicController : MonoBehaviour
 
     private void DialogMusic()
     {
-        StartCoroutine(CrossFade(DialogClipList[musicIndex = (musicIndex + 1) % DialogClipList.Count], 1.0f));
+        Menu = MenuName.Dialog;
+        musicIndex = (musicIndex + 1) % DialogClipList.Count;
+        StartCoroutine(CrossFade(DialogClipList[musicIndex], 1.0f));
     }
 
     private void FightMusic()
     {
-        StartCoroutine(CrossFade(FightClipList[musicIndex = (musicIndex + 1) % FightClipList.Count], 1.0f));
+        
+        Menu = MenuName.Fight;
+        musicIndex = (musicIndex + 1) % FightClipList.Count;
+        StartCoroutine(CrossFade(FightClipList[musicIndex], 1.0f));
     }
 
     private void PlayMusic()
     {
-        StartCoroutine(CrossFade(LocationClipList[musicIndex = (musicIndex + 1) % LocationClipList.Count], 1.0f));
+        Menu = MenuName.Play;
+        musicIndex = (musicIndex + 1) % LocationClipList.Count;
+        StartCoroutine(CrossFade(LocationClipList[musicIndex], 1.0f));
     }
 
     public void MenuSound()
     {
-        StartCoroutine(CrossFade(MenuClipList[musicIndex = (musicIndex + 1) % MenuClipList.Count], 1.0f));
+        Menu = MenuName.Menu;
+        musicIndex = (musicIndex + 1) % MenuClipList.Count;
+        StartCoroutine(CrossFade(MenuClipList[musicIndex], 1.0f));
     }
 
     private IEnumerator CrossFade(AudioClip nextClip, float fadeDuration)
@@ -91,7 +116,8 @@ public class MusicController : MonoBehaviour
         while (fadeTimer < fadeDuration)
         {
             fadeTimer += Time.fixedDeltaTime;
-            musicPlayer.volume = Mathf.Lerp(startVolume, 0f, fadeTimer / fadeDuration); // плавное затухание текущего трека
+            musicPlayer.volume =
+                Mathf.Lerp(startVolume, 0f, fadeTimer / fadeDuration); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             yield return null;
         }
 
@@ -102,9 +128,11 @@ public class MusicController : MonoBehaviour
         while (fadeTimer < fadeDuration)
         {
             fadeTimer += Time.fixedDeltaTime;
-            musicPlayer.volume = Mathf.Lerp(0f, startVolume, fadeTimer / fadeDuration); // плавное нарастание следующего трека
+            musicPlayer.volume =
+                Mathf.Lerp(0f, startVolume, fadeTimer / fadeDuration); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             yield return null;
         }
+
         musicPlayer.volume = startVolume;
     }
 }
